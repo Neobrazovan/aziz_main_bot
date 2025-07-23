@@ -1,6 +1,9 @@
-services:
-  - type: worker
-    name: aziz_main_bot
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "bash start.sh"
+type: web
+name: aziz_main_bot
+env: python
+plan: free
+buildCommand: pip install -r requirements.txt
+startCommand: bash start.sh
+build:
+  environment:
+    pythonVersion: 3.10
